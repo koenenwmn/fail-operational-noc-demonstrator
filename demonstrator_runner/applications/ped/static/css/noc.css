@@ -1,0 +1,106 @@
+.noc {
+	background: #333333;
+	padding: 10px;
+}
+.noc #arrow path {
+	fill: #ffffff;
+}
+.noc #arrowTDM path {
+	fill: #0065bd;
+}
+.noc #arrowTDMsetup path {
+	fill: #a2ad00;
+}
+.noc .nodeLC {
+	fill: #e37222;
+	stroke: #cccccc;
+	stroke-width: 0.2;
+	cursor: pointer;
+}
+.noc .nodeHC {
+	fill: #005293;
+	stroke: #cccccc;
+	stroke-width: 0.2;
+	cursor: pointer;
+}
+.noc .nodeIO {
+	fill: #dad7cb;
+	stroke: #cccccc;
+	stroke-width: 0.2;
+	cursor: pointer;
+}
+.noc .node {
+	fill: #ffffff;
+	stroke: #cccccc;
+	stroke-width: 0.2;
+	cursor: pointer;
+}
+.noc .router {
+	fill: #ffffff;
+	stroke: #cccccc;
+	stroke-width: 0.2;
+}
+.noc .node.selected,
+.noc .nodeIO.selected,
+.noc .nodeLC.selected,
+.noc .nodeHC.selected {
+	fill: #a2ad00 !important;
+}
+.noc .node.hideInfo,
+.noc .nodeIO.hideInfo,
+.noc .nodeLC.hideInfo,
+.noc .nodeHC.hideInfo,
+.noc .router.hideInfo {
+	fill: #ffffff !important;
+}
+
+.noc .router.selected {
+	fill: #64a0c8 !important;
+}
+
+.noc .router.available {
+	fill: #a2ad00 !important;
+	cursor: pointer;
+}
+
+.noc .link, 
+.noc .nodelink {
+	stroke-width: 0.8;
+	stroke: #ffffff;
+	marker-end: url(#arrow);
+}
+.noc .link.selected,
+.noc .nodelink.selected {
+	stroke: #a2ad00 !important;
+}
+.noc .link.hideInfo,
+.noc .nodelink.hideInfo {
+	stroke: #ffffff !important;
+}
+.noc .linkclick {
+	stroke: rgba(0,0,0,0);
+	stroke-width: 2.0;
+	cursor: pointer;
+}
+.noc .tdmchannel {
+	stroke: rgba(0,101,189,1);
+	stroke-width: 0.2;
+	marker-end: url(#arrowTDM);
+}
+.noc .tdmconnection {
+	stroke: rgba(0,101,189,1);
+	stroke-width: 0.2;
+	marker-start: url(#arrowTDM);
+	marker-end: url(#arrowTDM);
+}
+.noc .tdmchannelsetup {
+	stroke: rgba(162,173,0,1);
+	stroke-width: 0.2;
+	marker-end: url(#arrowTDMsetup);
+}
+.noc .tdmconnectionsetup {
+	stroke: rgba(162,173,0,1);
+	stroke-width: 0.2;
+	marker-start: url(#arrowTDMsetup);
+	marker-end: url(#arrowTDMsetup);
+}

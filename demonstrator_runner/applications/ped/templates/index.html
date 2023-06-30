@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>TUM - LIS: Hybrid NoC Monitor</title>
+	<script src="static/js/jquery-3.3.1.min.js"></script>
+	<script src="static/js/socketio.js"></script>
+	<script src="static/js/Chart.bundle.min.js"></script>
+	<script src="static/js/noc.js"></script>
+	<script src="static/js/client.js"></script>
+	<link rel="stylesheet" type="text/css" href="static/css/html.css" />
+	<link rel="stylesheet" type="text/css" href="static/css/Chart.min.css" />
+	<link rel="stylesheet" type="text/css" href="static/css/noc.css" />
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+</head>
+<body class="hbox viewport">
+	<section class="vbox main">
+		<ul class="tabs">
+			<li id="tab-0" onclick="nocInfo.showInfo(0)">Overview</li>
+			<li id="tab-1" onclick="nocInfo.showInfo(1)">TDM</li>
+			<li id="tab-2" onclick="nocInfo.showInfo(2)">BE</li>
+		</ul>
+		<svg id="noc" class="viewport noc">
+			<defs>
+				<marker id="arrow" markerWidth="10" markerHeight="10" refX="0.1" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+					<path d="M 0 2 L 0 4 L 2 3 z"/>
+				</marker>
+				<marker id="arrowTDM" markerWidth="10" markerHeight="10" refX="0" refY="5" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+					<path d="M 0 4.5 L 1 5 L 0 5.5 z"/>
+				</marker>
+				<marker id="arrowTDMsetup" markerWidth="10" markerHeight="10" refX="0" refY="5" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+					<path d="M 0 4.5 L 1 5 L 0 5.5 z"/>
+				</marker>
+			</defs>
+		</svg>
+	</section>
+	<section class="vbox side">
+      <!--
+		<label id="swContainer" class="switch">
+			<input id="swToggleColors" type="checkbox" onclick="nocInfo.toggleColors()" checked="true">
+			<span class="slider round"></span>
+		</label>
+      -->
+		<div id="chartContainer">
+			<h1 id="title">Title</h1>
+			<canvas id="chartBE" width="100%" height="45%"></canvas>
+			<canvas id="chartTDM" width="100%" height="45%"></canvas>
+		</div>
+		<div id="info" class="extend"></div>
+		<div id="action-link">
+			<button id="btnToggleError" onclick="nocInfo.toggleErrorInjection()">Inject fault</button>
+		</div>
+		<!--
+		<div id="action-general">
+			<textarea id="terminalOutput" rows="6" readonly="readonly"></textarea>
+			<form class="hbox" action="javascript: nocInfo.sendCommand()">
+				<input type="text" id="terminalCommandLine" class="extend"></input>
+				<input id="btnTerminalSend" type="submit" value="Send"></button>
+			</form>
+		</div>
+		-->
+	</section>
+</body>
+</html>
